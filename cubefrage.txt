@@ -1,0 +1,69 @@
+CUBE Aufgabe
+Create a Cube class that represents a cube 
+(i.e., a standard hexahedron). Create a public 
+Cube (int edgeLength) constructor for the class, 
+that takes the length of the cube's edge as its 
+parameter.
+
+Make a public int volume() method for the cube, 
+which calculates and returns the cube's volume. 
+The volume of the cube is calculated with the 
+formula edgeLength * edgeLength * edgeLength. 
+Moreover, make a public String toString() method 
+for the cube, which returns a string 
+representation of it. The string representation 
+should take the form "The length of the edge is 
+l and the volume v", where l is the length and v 
+the volume - both the length and volume must be 
+represented as integers.
+
+public class Cube {
+
+    private int edgeLength;
+    private int volume;
+    
+        public Cube (int edgeLength){
+            this.edgeLength = edgeLength;
+        }
+        
+        public int volume(){
+            this.volume = this.edgeLength * this.edgeLength * this.edgeLength;
+            return this.volume;
+        }
+        
+        public String toString(){
+            return "The length of the edge is " + this.edgeLength + " and the volume " + (this.edgeLength * this.edgeLength * this.edgeLength);
+        }
+}
+
+____________________________________________________
+
+
+import java.util.Scanner;
+
+public class Program {
+
+    public static void main(String[] args) {
+        //Scanner scanner = new Scanner(System.in);
+
+        // Experiment with your program here
+        Cube klumpen = new Cube(7);
+       
+        System.out.println(klumpen.toString());
+        
+        
+        System.out.println(klumpen.toString());
+        
+        System.out.println("");
+        
+        Cube Zucker = new Cube(2);
+        System.out.println(Zucker.volume());
+        System.out.println(Zucker);
+    }
+}
+
+Frage: Cube c = new Cube(7);
+		System.out.println(c.toString()); 
+		soll ausgeben: "The length of the edge is 7 and the volume 343"
+		
+		ohne die berechnung von volume im return String gibt toString aber "The length of the edge is 7 and the volume 0 zurück"
